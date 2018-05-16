@@ -1,0 +1,35 @@
+---
+title: "R Markdown and Leaflet"
+author: "Jaime Jordan"
+date: "May 16, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#Instructions#
+Create a web page using R Markdown that features a map created with Leaflet.
+
+Host your webpage on either GitHub Pages, RPubs, or NeoCities.
+
+Using leaflet, I mapped a General Contracting Company on the Western Slope of Colorado.
+
+```{r}
+library(leaflet)
+my_map <- leaflet () %>%
+addTiles()%>%  
+addMarkers(lat = 38.800700, lng = -107.987,
+          popup="Kissner GC")
+my_map
+```
+
+This company is near Cedaredge, CO.
+
+```{r}
+leaflet() %>%
+  addTiles()%>%
+  addRectangles(lat1= 38.909330, lng1 = -107.936737,
+                lat2 = 38.886618, lng2 = -107.910473)
+```
